@@ -1,8 +1,88 @@
 import $ from 'jquery';
 import { createElement } from '../utils/createElement';
 import Route from "../Route";
+import { HomeLink } from './HomeLink';
 
 /** @jsx createElement */
+
+const catagories = [
+    {
+        title: 'System Engineering:',
+        points: [
+            {
+                title: 'Biological',
+                points: [
+                    'Squirrel and Deer-Proof Bird Feeder'
+                ]
+            },
+            {
+                title: 'Mechanical',
+                points: [
+                    'Squirrel and Deer-Proof Bird Feeder',
+                    'Kid-Friendly Umbrella',
+                    'Easier to Store Motorcycle Helmet'
+                ]
+            },
+            {
+                title: 'Architectural',
+                points: [
+                    'Fast, Easy, Portable Shelter'
+                ]
+            },
+            {
+                title: 'Construction',
+                points: [
+                    'Fast, Easy, Portable Shelter'
+                ]
+            },
+            {
+                title: 'Materials',
+                points: [
+                    'Kid-Friendly Umbrella',
+                    'Easier to Store Motorcycle Helmet',
+                    'Dog Food Bowl/Mat'
+                ]
+            },
+
+        ]
+    },
+    {
+        title: 'Manufacturing Categories:',
+        points: [
+            {
+                title: 'Construction',
+                points: [
+                    'Squirrel and Deer-Proof Bird Feeder',
+                    'Fast, Easy, Portable Shelter',
+                    'Kid-Friendly Umbrella',
+                    'Easier to Store Motorcycle Helmet',
+                    'Dog Food Bowl/Mat'
+                ]
+            },
+            {
+                title: 'Electrical',
+                points: [
+                    'Squirrel and Deer-Proof Bird Feeder'
+                ]
+            },
+        ]
+    }
+];
+
+const materials = [
+    '3-D Printer',
+    '3-D Printing Filament',
+    'Glue',
+    'Wiring/small motor',
+    'Sensor',
+    'Flexible metal/plastic poles',
+    'Planks or other material made out of bamboo (Bamboo is very cost-effective and eco-friendly to use in construction and is very sturdy while also very flexible)',
+    'Washers and bolts',
+    'PVA Plastics',
+    'Polycarbonate plastic',
+    'Fiberglass',
+    'Expanded Polystyrene (EPS) foam'
+];
 
 let instance = null;
 
@@ -16,114 +96,86 @@ export default class Hello extends Route {
         this.html = $(this.init({ onClick: this.onClick.bind(this) }));
     }
 
+    catagories(props) {
+        console.log(props.points);
+
+        return (
+            <ul class="mb-8 mt-4 pr-8">
+                <li class="text-2xl font-medium">{props.title}</li>
+                {props.points.map(({ title, points }) => {
+                    return (
+                        <li class="mb-1">
+                            <div>- {title}</div>
+                            <ul class="ml-6">{
+                                points.map(point => (
+                                    <li>{point}</li>
+                                ))
+                            }</ul>
+                        </li>
+                    );
+                })}
+            </ul>
+        );
+    }
+
     init({ onClick }) {
         return (
             <div class="flex flex-col">
-
+                <HomeLink onClick={onClick} currentPage='Technical Info' />
                 <div class="mt-16 pl-4">
                     <div class="font-semibold text-6xl mb-4">Overall System & Manufacturing Categories</div>
                     <div class="text-sm pr-8 text-gray-400">
                         This is an overall list of the system and manufacturing categories that may relate to each of my proposals:
                     </div>
 
-                    <div class="mt-8">
-                        <div class="text-2xl font-semibold">System Engineering</div>
-
-                        <div class="mt-4">
-                            <div class="underline font-medium">BIOLOGICAL:</div>
-                            <div>Squirrel and Deer-Proof Bird Feeder</div>
-                        </div>
-
-                        <div class="mt-4">
-                            <div class="underline font-medium">MECHANICAL:</div>
-                            <div>Squirrel and Deer-Proof Bird Feeder</div>
-                            <div>Kid-Friendly Umbrella</div>
-                            <div>Easier to Store Motorcycle Helmet</div>
-                        </div>
-                        
-                        <div class="mt-4">
-                            <div class="underline font-medium">ARCHITECTURAL:</div>
-                            <div>Fast, Easy, Portable Shelter</div>
-                        </div>
-
-                        <div class="mt-4">
-                            <div class="underline font-medium">CONSTRUCTION:</div>
-                            <div>Fast, Easy, Portable Shelter</div>
-                        </div>
-
-                        <div class="mt-4">
-                            <div class="underline font-medium">MATERIALS</div>
-                            <div>Kid-Friendly Umbrella</div>
-                            <div>Easier to Store Motorcycle Helmet</div>
-                            <div>Dog Food Bowl/Mats</div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>Manufacturing categories</div>
-
-                        <div>
-                            <div>CONSTRUCTION:</div>
-                            <div>Squirrel and Deer-Proof Bird Feeder</div>
-                            <div>Fast, Easy, Portable Shelter</div>
-                            <div>Kid-Friendly Umbrella</div>
-                            <div>Easier to Store Motorcycle Helmet</div>
-                            <div>Dog Food Bowl/Mat</div>
-                        </div>
-
-                        <div>
-                            <div>ELECTRICAL:</div>
-                            <div>Squirrel and Deer-Proof Bird Feeder</div>
-
-                        </div>
-                    </div>
+                    {catagories.map(({ title, points }) =>
+                        <this.catagories title={title} points={points} />
+                    )}
 
                 </div>
 
                 <div class="mt-16 pl-4">
-                    <div>Overall Science Concepts and Technology</div>
-                    <div>This is an overall list of the science concepts and technology that I can apply to each of my proposals:</div>
+                    <div class="font-semibold text-6xl mb-4">Overall Science Concepts and Technology</div>
+                    <div class="text-sm pr-8 text-gray-400">This is an overall list of the science concepts and technology that I can apply to each of my proposals:</div>
 
-                    <div>
-                        <div>Science Concepts</div>
-                        <div>CONCEPTS AND PRINCIPLES INVOLVING SIMPLE MACHINES (CREDITED TO SCIENTISTS SUCH AS ISAAC NEWTON AND GASPARD-GUSTAVE CORIOLIS)</div>
+                    <div class="mb-8 mt-4 pr-8">
+                        <div class="text-2xl font-medium">Science Concepts:</div>
+                        <ul>
+                            <li>- Concepts and principles involving simple machines (credited to scientists such as Isaac Newton and Gaspard-Gustave Coriolis</li>
+                        </ul>
                     </div>
 
-                    <div>
-                        <div>
-                            SIMPLE MACHINES:
-                            <div>Levers, pulleys, wheel, and axles</div>
-                        </div>
-                        <div>SOFTWARE TO DETECT WHEN DEER AND/OR BIRDS ARE TRYING TO GET INTO THE FEEDER</div>
-                        <div>HARDWARE SUCH AS SENSORS OR CAMERAS.</div>
-                        <div>BUTTONS OR CRANKS</div>
-                    </div>
-                </div>
-
-                <div class="mt-16 pl-4">
-                    <div>Possible Materials Needed</div>
-                    <div>
-                        <div>3-D Printer</div>
-                        <div>3-D Printing Filament</div>
-                        <div>Glue</div>
-                        <div>Wiring/small motor</div>
-                        <div>Sensor</div>
-                        <div>Flexible metal/plastic poles</div>
-                        <div>Planks or other material made out of bamboo (Bamboo is very cost-effective and eco-friendly to use in construction and is very sturdy while also very flexible)</div>
-                        <div>Washers and bolts</div>
-                        <div>PVA Plastics</div>
-                        <div>Polycarbonate plastic</div>
-                        <div>Fiberglass</div>
-                        <div>Expanded Polystyrene (EPS) foam</div>
+                    <div  class="mb-8 mt-4 pr-8">
+                        <div class="text-2xl font-medium">Technology That Could Be Applied:</div>
+                        <ul>
+                            <li>
+                                <ul>
+                                    <li>- Simple Machines</li>
+                                    <li class="ml-6">Levers, pulleys, wheel, and axles</li>
+                                </ul>
+                            </li>
+                            <li>- Software to detect when deer and/or birds are trying to get into the feeder</li>
+                            <li>- Hardware such as sensors or cameras</li>
+                            <li>- Buttons or cranks</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="mt-16 pl-4">
-                    <div>Prior Experiences & Further Investigation Needed</div>
-                    <div>
+                    <div class="font-semibold text-6xl mb-4">Possible Materials Needed</div>
+                    <ul>
+                        {materials.map(text => (
+                            <li class="mb-1">- {text}</li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div class="mt-16 pl-4">
+                    <div class="font-semibold text-6xl mb-4">Prior Experiences & Further Investigation Needed</div>
+                    <div class="mt-4 pr-8">
                         Some experience I have prior to this project that may help me in the design and construction of one of these proposals are courses I took in Robotics, Programming, and Technology Design.
                     </div>
-                    <div>
+                    <div class="mb-8 mt-4 pr-8">
                         Areas I would need to further investigate would be the costs, effectiveness, and accessibility of the materials I could use to create these products and more concepts in programming electrical design.
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import { createElement } from '../utils/createElement';
 import $ from 'jquery';
 import Route from "../Route";
+import { HomeLink } from './HomeLink';
 
 /** @jsx createElement */
 
@@ -77,10 +78,7 @@ export default class Proposals extends Route {
     init({ onClick }) {
         return (
             <div id="proposal" class="flex flex-col">
-                <div class="fixed flex justify-between mt-4 left-0 w-full">
-                    <div class="text-sm ml-4 font-semibold self-center">Proposals</div>
-                    <div onClick={() => { onClick('Home') }} class="text-xs mr-8 font-semibold self-center">Home</div>
-                </div>
+                <HomeLink onClick={onClick} currentPage='Proposals' />
                 {content.map(({ title, paragraphs }) => (
                     <this.section title={title} paragraphs={paragraphs}/>
                 ))}

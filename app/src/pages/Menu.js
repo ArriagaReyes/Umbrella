@@ -37,7 +37,7 @@ export default class Menu extends Route {
             <div class="flex flex-col fixed top-0 left-0 right-0 bottom-0">
                 <this.topLink onClick={onClick} name='Hello'/>
                 <this.link onClick={onClick} name='Proposals'/>
-                <this.link onClick={onClick} name='Chosen'/>
+                <this.link onClick={onClick} name='Chosen Proposal'/>
                 <this.link onClick={onClick} name='Technical Info'/>
                 <this.link onClick={onClick} name='Mentors'/>
                 <this.link onClick={onClick} name='Work'/>
