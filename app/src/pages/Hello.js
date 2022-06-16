@@ -19,9 +19,9 @@ export default class Hello extends Route {
 
     init({ onClick }) {
         return (
-            <div>
-                <div class="flex flex-col mt-16 pl-4">
-                <HomeLink onClick={onClick} currentPage=':3' />
+            <div class="grid grid-cols-full-bleed">
+                <div class="col-start-2 flex flex-col mt-16 lg:mt-28 pl-4">
+                    <HomeLink onClick={onClick} currentPage=':3' />
                     <div class="font-semibold text-6xl mb-6">Engineering Capstone Project</div>
                     <div class="mt-4 pr-8">
                         Hi! My name is Valerie Marmol and I'm currently a high school senior in Union County Magnet High School. Currently, I am working on an Engineering Capstone project in which over the course of a year, I will develop and create a solution to a problem in the real world.

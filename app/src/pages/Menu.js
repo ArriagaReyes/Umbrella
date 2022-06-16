@@ -18,7 +18,7 @@ export default class Menu extends Route {
 
     link(props) {
         return (
-            <div onClick={() => { props.onClick(props.name) }} class="cursor-pointer text-6xl font-semibold mt-6 pl-4">
+            <div onClick={() => { props.onClick(props.name) }} class="text-6xl hover:underline font-semibold mt-6 pl-4">
                 {props.name}
             </div>
         );
@@ -26,7 +26,7 @@ export default class Menu extends Route {
 
     topLink(props) {
         return (
-            <div onClick={() => { props.onClick(props.name) }} class="cursor-pointer text-6xl font-semibold mt-8 pl-4">
+            <div onClick={() => { props.onClick(props.name) }} class="text-6xl hover:underline font-semibold mt-8 lg:mt-28 pl-4">
                 {props.name}
             </div>
         );
@@ -34,14 +34,16 @@ export default class Menu extends Route {
 
     init({ onClick }) {
         return (
-            <div class="flex flex-col fixed top-0 left-0 right-0 bottom-0">
-                <this.topLink onClick={onClick} name='Hello'/>
-                <this.link onClick={onClick} name='Proposals'/>
-                <this.link onClick={onClick} name='Chosen Proposal'/>
-                <this.link onClick={onClick} name='Technical Info'/>
-                <this.link onClick={onClick} name='Mentors'/>
-                <this.link onClick={onClick} name='Work'/>
-                <div class="mt-auto mb-20 pl-6">vmarmol@ucvts.org</div>
+            <div class="fixed grid grid-cols-full-bleed top-0 left-0 right-0 bottom-0">
+                <div class="flex col-start-2 flex-col h-full">
+                    <this.topLink onClick={onClick} name='Hello'/>
+                    <this.link onClick={onClick} name='Proposals'/>
+                    <this.link onClick={onClick} name='Chosen Proposal'/>
+                    <this.link onClick={onClick} name='Technical Info'/>
+                    <this.link onClick={onClick} name='Mentors'/>
+                    <this.link onClick={onClick} name='Work'/>
+                    <div class="mt-auto mb-12 pl-6">vmarmol@ucvts.org</div>
+                </div>
             </div>
         );
     }

@@ -77,11 +77,13 @@ export default class Proposals extends Route {
 
     init({ onClick }) {
         return (
-            <div id="proposal" class="flex flex-col">
-                <HomeLink onClick={onClick} currentPage='Proposals' />
-                {content.map(({ title, paragraphs }) => (
-                    <this.section title={title} paragraphs={paragraphs}/>
-                ))}
+            <div class="grid grid-cols-full-bleed">
+                <div class="col-start-2 flex flex-col lg:mt-12">
+                    <HomeLink onClick={onClick} currentPage='Proposals' />
+                    {content.map(({ title, paragraphs }) => (
+                        <this.section title={title} paragraphs={paragraphs}/>
+                    ))}
+                </div>
             </div>
         );
     }

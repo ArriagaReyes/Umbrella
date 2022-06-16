@@ -2,7 +2,11 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        'full-bleed': '1fr min(65ch, 100%) 1fr'
+      }
+    },
   },
   variants: {
     extend: {},
