@@ -28,6 +28,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "gsap": "^3.10.4",
     "jquery": "^3.6.0"
   }
 }
