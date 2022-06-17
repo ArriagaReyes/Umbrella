@@ -10,6 +10,9 @@ let instance = null;
 const content = [
     {
         title: 'Squirrel & Deer-Proof Bird Feeder',
+        image: {
+            src: "./deer.jpg"
+        },
         paragraphs: [
             'Many people enjoy having bird feeders set up in their back or front yard. The main purpose of these bird feeders is to attract birds into yards for people to observe and enjoy while also feeding birds as well. However, a constant problem people with bird feeders have is that squirrels and deer are also attracted to the seeds. Prompted by the treats, these deer and squirrels often intrude into people’s backyards, doing whatever they can to get into the feeders, even knocking them over and spilling its contents all over the yard and leaving little to no seeds for the birds to eat.',
             'One example of this problem was observed in my neighbor’s backyard. Near the middle of their backyard, an average bird feeder is hung on a pole with a hook.  Additionally, their backyard is surrounded by a fence. However, their fence is not tall enough to stop deer from jumping over. On multiple occasions, these deer and squirrels have trespassed into their yard to knock over their bird feeder, making a mess and eating all the food. Not only is this a problem because of the mess they make, but it can also become a danger to their children, who constantly like playing in their backyard if they come in contact with the deer.',
@@ -18,6 +21,9 @@ const content = [
     },
     {
         title: 'Fast,‌ ‌Easy,‌ ‌Portable‌ ‌Shelter‌',
+        image: {
+            src: "./shelter.jpg"
+        },
         paragraphs: [
             'With the changing climate, natural disasters have been occurring more than ever. Hurricanes, floods, and wildfires are some of the top disasters caused by climate change. They also happen to be disasters that force people out of their homes across the world, often leaving them with no shelter. Natural disasters haven’t been the only cause of homelessness. Conflict in countries prone to frequent hostility has also displaced many innocent lives from their homes, left with nowhere to go.',
             '1,714,000 people were internally displaced in the US alone during the year 2020 due to natural disasters (IDMC). Additionally, across 149 countries in the world, 40.5 million people were reported to have been internally displaced in 2020 due to natural disasters and conflict (IDMC). Many of these internally displaced people (IDPs) are sent to camps run by humanitarian actors. However, while these camps are helpful in the immediate aftermath of displacement, when the displacement of people becomes prolonged it becomes harder to provide for these people.',
@@ -26,6 +32,9 @@ const content = [
     },
     {
         title: 'Kid-Friendly‌ ‌Umbrella‌',
+        image: {
+            src: "./umbrella.jpg"
+        },
         paragraphs: [
             'Umbrellas have been around for millions of years, starting off as simple parasols used to show off social status, to a common but practical item used in many lives today.  In the US alone, about 33 million umbrellas are sold annually. The main purpose of umbrellas today is to help shield people traveling outside from the rain. They are items used both by adults and children and have proven to become, although sometimes overlooked, essential products to have. However, umbrellas tend to still have problems despite this and can sometimes be a hassle to handle, especially for children.',
             'A common problem that umbrellas have is that they can be difficult to open up. Many umbrellas utilize a runner, or a piece that must be pitched to that slide up and down the shaft of the umbrella, to push up the stretchers attached to the ribs of the canopy, opening up the umbrella. However, pinching and pushing the runner is known to be challenging, even for adult consumers. That is why many consumers opt for umbrellas that automatically open with a push of a button. This, on the other hand, is not very safe for children, who can easily hurt themselves when the umbrella automatically springs open. Additionally, it can be difficult to keep a steady grip on the handle of an umbrella, especially in stronger weather conditions when the wind tries to turn the canopy of the umbrella inside out.',
@@ -34,6 +43,9 @@ const content = [
     },
     {
         title: 'Easier to Store Motorcycle Helmet',
+        image: {
+            src: "./helmet.jpg"
+        },
         paragraphs: [
             'Many people who own a vehicle today own a motorcycle as their main mode of transportation. In the US alone in 2018, there have been 8.3 million people recorded to have owned a motorcycle. By law, all motorcycle drivers and riders are required to wear a helmet when riding the motorcycle.',
             'One of the main common problems with motorcycle helmets is that they are inconvenient to carry around everywhere (for example when out shopping or at a restaurant) after a ride. Their large shape makes it difficult to store in bags and backpacks without taking up a lot of space. While some motorcycle users decide to leave their helmets with their bikes when going into stores or other places because of this reason, this isn’t always the safest option concerning the risk of theft, even if one attaches a lock.',
@@ -42,6 +54,9 @@ const content = [
     },
     {
         title: 'Dog Food Bowl/Mat',
+        image: {
+            src: "./doggo.jpg"
+        },
         paragraphs: [
             'This problem was observed with my own dog and his standard dog bowl. Every time he eats, it is a struggle to get him to eat out of his bowl. He barks and insists on people picking the food out of the bowl and placing it on the floor, defeating the purpose of the bowl to begin with. Additionally, he enjoys the action of kicking his food around the floor, making a mess, before actually eating.',
             'After some more observation and research, this resentment towards the standard bowl could be due to how uncomfortable it is for some dogs to use it. Some dogs despise the noises the food makes when it moves around in their bowls. It makes them anxious and less inclined to want to use the bowl. Additionally, some dogs (especially smaller dogs) find deeper bowls more stressful to use when they need to stick their heads deeper inside just to eat their food. Lastly, the preference for eating and playing with their food on the floor could be due to the need for stimuli.',
@@ -63,11 +78,13 @@ export default class Proposals extends Route {
     section(props) {
         const {
             title,
-            paragraphs
+            paragraphs,
+            image
         } = props;
         return (
             <div class="mt-16 pl-4">
                 <div class="font-semibold text-6xl mb-8">{title}</div>
+                <img src={image.src}/>
                 <div class="mt-4 pr-8">{paragraphs[0]}</div>
                 <div class="mt-4 pr-8">{paragraphs[1]}</div>
                 <div class="mt-4 pr-8 mb-10">{paragraphs[2]}</div>
@@ -80,8 +97,8 @@ export default class Proposals extends Route {
             <div class="grid grid-cols-full-bleed">
                 <div class="col-start-2 flex flex-col lg:mt-12">
                     <HomeLink onClick={onClick} currentPage='Proposals' />
-                    {content.map(({ title, paragraphs }) => (
-                        <this.section title={title} paragraphs={paragraphs}/>
+                    {content.map(({ title, paragraphs, image }) => (
+                        <this.section title={title} paragraphs={paragraphs} image={image}/>
                     ))}
                 </div>
             </div>
