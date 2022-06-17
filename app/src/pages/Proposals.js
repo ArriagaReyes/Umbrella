@@ -3,6 +3,12 @@ import $ from 'jquery';
 import Route from "../Route";
 import { HomeLink } from './HomeLink';
 
+import deer from '../../assets/deer.jpg';
+import shelter from '../../assets/shelter.jpg';
+import umbrella from '../../assets/umbrella.jpg';
+import helmet from '../../assets/helmet.jpg';
+import doggo from '../../assets/doggo.jpg';
+
 /** @jsx createElement */
 
 let instance = null;
@@ -11,7 +17,7 @@ const content = [
     {
         title: 'Squirrel & Deer-Proof Bird Feeder',
         image: {
-            src: "./deer.jpg"
+            src: deer
         },
         paragraphs: [
             'Many people enjoy having bird feeders set up in their back or front yard. The main purpose of these bird feeders is to attract birds into yards for people to observe and enjoy while also feeding birds as well. However, a constant problem people with bird feeders have is that squirrels and deer are also attracted to the seeds. Prompted by the treats, these deer and squirrels often intrude into people’s backyards, doing whatever they can to get into the feeders, even knocking them over and spilling its contents all over the yard and leaving little to no seeds for the birds to eat.',
@@ -22,7 +28,7 @@ const content = [
     {
         title: 'Fast,‌ ‌Easy,‌ ‌Portable‌ ‌Shelter‌',
         image: {
-            src: "./shelter.jpg"
+            src: shelter
         },
         paragraphs: [
             'With the changing climate, natural disasters have been occurring more than ever. Hurricanes, floods, and wildfires are some of the top disasters caused by climate change. They also happen to be disasters that force people out of their homes across the world, often leaving them with no shelter. Natural disasters haven’t been the only cause of homelessness. Conflict in countries prone to frequent hostility has also displaced many innocent lives from their homes, left with nowhere to go.',
@@ -33,7 +39,7 @@ const content = [
     {
         title: 'Kid-Friendly‌ ‌Umbrella‌',
         image: {
-            src: "./umbrella.jpg"
+            src: umbrella
         },
         paragraphs: [
             'Umbrellas have been around for millions of years, starting off as simple parasols used to show off social status, to a common but practical item used in many lives today.  In the US alone, about 33 million umbrellas are sold annually. The main purpose of umbrellas today is to help shield people traveling outside from the rain. They are items used both by adults and children and have proven to become, although sometimes overlooked, essential products to have. However, umbrellas tend to still have problems despite this and can sometimes be a hassle to handle, especially for children.',
@@ -44,7 +50,7 @@ const content = [
     {
         title: 'Easier to Store Motorcycle Helmet',
         image: {
-            src: "./helmet.jpg"
+            src: helmet
         },
         paragraphs: [
             'Many people who own a vehicle today own a motorcycle as their main mode of transportation. In the US alone in 2018, there have been 8.3 million people recorded to have owned a motorcycle. By law, all motorcycle drivers and riders are required to wear a helmet when riding the motorcycle.',
@@ -55,7 +61,7 @@ const content = [
     {
         title: 'Dog Food Bowl/Mat',
         image: {
-            src: "./doggo.jpg"
+            src: doggo
         },
         paragraphs: [
             'This problem was observed with my own dog and his standard dog bowl. Every time he eats, it is a struggle to get him to eat out of his bowl. He barks and insists on people picking the food out of the bowl and placing it on the floor, defeating the purpose of the bowl to begin with. Additionally, he enjoys the action of kicking his food around the floor, making a mess, before actually eating.',
