@@ -2,9 +2,6 @@ import { createElement } from '../utils/createElement';
 
 /** @jsx createElement */
 
-let instance = null;
-
-
 const HomeLink = (props) => {
     const {
         onClick,

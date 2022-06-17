@@ -26,7 +26,7 @@ export default class Menu extends Route {
 
     topLink(props) {
         return (
-            <div onClick={() => { props.onClick(props.name) }} class="text-6xl hover:underline font-semibold mt-8 lg:mt-28 pl-4">
+            <div onClick={() => { props.onClick(props.name) }} class="text-6xl hover:underline font-semibold mt-8 pl-4">
                 {props.name}
             </div>
         );
@@ -41,7 +41,7 @@ export default class Menu extends Route {
                     <this.link onClick={onClick} name='Chosen Proposal'/>
                     <this.link onClick={onClick} name='Technical Info'/>
                     <this.link onClick={onClick} name='Mentors'/>
-                    <this.link onClick={onClick} name='Work'/>
+                    <this.link onClick={onClick} name='Works Cited'/>
                     <div class="mt-auto mb-12 pl-6">vmarmol@ucvts.org</div>
                 </div>
             </div>
